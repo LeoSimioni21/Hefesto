@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Hefesto</title>
+  </head>
+  <body>
+    <!-- Tela inicial -->
+    <div class="container" id="home-screen">
+      <h1>Bem-vindo ao Hefesto</h1>
+      <p>Escolha uma das opções abaixo:</p>
+      <div class="button-container">
+        <button class="btn btn-primary" onclick="navigateTo('register')">
+          Cadastrar produção
+        </button>
+        <button class="btn btn-secondary" onclick="navigateTo('consulta')">
+          Consultar produção
+        </button>
+      </div>
+    </div>
+
+    <!-- Tela de cadastro -->
+    <div class="container hidden" id="tela-cadastro">
+      <h1>Cadastro de Produção</h1>
+      <form>
+        <label for="user">Usuário</label>
+        <input
+          type="text"
+          id="user"
+          placeholder="Informe o nome do usuário"
+          required
+        />
+
+        <label for="machine">Máquina</label>
+        <select id="machine" required>
+          <option value="" disabled selected>Selecione a máquina</option>
+          <option value="1">Máquina 1</option>
+          <option value="2">Máquina 2</option>
+          <option value="3">Máquina 3</option>
+        </select>
+
+        <label for="shift">Turno</label>
+        <select id="shift" required>
+          <option value="" disabled selected>Selecione o turno</option>
+          <option value="morning">Manhã</option>
+          <option value="afternoon">Tarde</option>
+          <option value="night">Noite</option>
+        </select>
+
+        <label for="item">Item</label>
+        <select id="item" required>
+          <option value="" disabled selected>Selecione o item</option>
+          <option value="item1">Item 1</option>
+          <option value="item2">Item 2</option>
+          <option value="item3">Item 3</option>
+        </select>
+
+        <label for="quantity">Quantidade Produzida</label>
+        <input
+          type="number"
+          id="quantity"
+          placeholder="Informe a quantidade produzida"
+          required
+        />
+
+        <div class="button-container">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            onclick="navigateTo('home')"
+          >
+            Voltar
+          </button>
+          <button type="submit" class="btn btn-primary">Salvar Produção</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Tela de consulta -->
+    <div class="container hidden" id="tela-consulta">
+      <h1>Consulta de Produção</h1>
+      <form>
+        <label for="start-date">Data Início</label>
+        <input type="date" id="start-date" required />
+
+        <label for="end-date">Data Fim</label>
+        <input type="date" id="end-date" required />
+
+        <label for="consulta-user">Usuário</label>
+        <input
+          type="text"
+          id="consulta-user"
+          placeholder="Informe o nome do usuário"
+        />
+
+        <label for="consulta-machine">Máquina</label>
+        <select id="consulta-machine">
+          <option value="" selected>Selecione a máquina (opcional)</option>
+          <option value="1">Máquina 1</option>
+          <option value="2">Máquina 2</option>
+          <option value="3">Máquina 3</option>
+        </select>
+
+        <label for="consulta-shift">Turno</label>
+        <select id="consulta-shift">
+          <option value="" selected>Selecione o turno (opcional)</option>
+          <option value="morning">Manhã</option>
+          <option value="afternoon">Tarde</option>
+          <option value="night">Noite</option>
+        </select>
+
+        <label for="consulta-item">Item</label>
+        <select id="consulta-item">
+          <option value="" selected>Selecione o item (opcional)</option>
+          <option value="item1">Item 1</option>
+          <option value="item2">Item 2</option>
+          <option value="item3">Item 3</option>
+        </select>
+
+        <div class="button-container">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            onclick="navigateTo('home')"
+          >
+            Voltar
+          </button>
+          <button type="submit" class="btn btn-primary">Pesquisar</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="assets/js/script.js" defer></script>
+  </body>
+</html>
