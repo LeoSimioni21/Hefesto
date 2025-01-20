@@ -5,14 +5,62 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #020620;
+  background-color: #ffffff;
   font-family: Arial, sans-serif;
+}
+
+body.dark {
+  background-color: #020620;
 }
 
 .hidden {
   display: none;
 }
 
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  background-color: #111;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  z-index: 1000;
+  height: 30px;
+  width: 70px;
+}
+
+.label .ball {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  left: 3px;
+  height: 27px;
+  width: 27px;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+  transform: translateX(47px);
+}
+.fa-moon {
+  color: #f1c40f;
+  font-size: 20px;
+}
+
+.fa-sun {
+  color: #f39c12;
+  font-size: 20px;
+}
 .container {
   text-align: center;
   background: white;
